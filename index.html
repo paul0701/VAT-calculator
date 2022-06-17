@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VAT calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Inconsolata:wght@200&family=Mina&family=Pangolin&family=Press+Start+2P&family=Space+Mono:wght@700&family=Special+Elite&family=Ubuntu&display=swap');
+
+        </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-dark">
+    <container id="container1">
+           <h1>Metric/Imperial unit converter</h1>
+    <div class="div">
+        <input id="intial-value" class="intial-value" type="number" placeholder="Enter" oninput="converter(this.value)"></input>
+       </div>
+   </container>
+   <container id="container2">
+       <div class="div">
+         <h2>VAT - 5%</h2>
+        <p id="conversion-value-five" class="conversion-value-five">£0</p>
+         <h2>VAT - 17.5%</h2>
+         <p id="conversion-value-seventeen" class="conversion-value-seventeen">£0</p>
+         <h2>VAT - 20%</h2>
+         <p id="conversion-value-twenty" class="conversion-value-twenty">£0</p>
+     </div>
+   </container>
+ 
+<script>//This changes the <p> with id="conversion-value" to a variable JS can understand "conversionValue" (in camelCase)
+    let conversionValueFive = document.getElementById("conversion-value-five")
+    let conversionValueSeventeen = document.getElementById("conversion-value-seventeen")
+    let conversionValueTwenty = document.getElementById("conversion-value-twenty")
+    //End of variable assignment code
+    
+    function converter(iv) 
+    
+    //Here we invoke the converter(this.value) function from the input tag
+    
+    {
+    let fiveNum=(iv * 1.05).toFixed(2)
+    conversionValueFive.textContent= "5% VAT on your purchase means a total price of" + " " + "£" + fiveNum + "p"
+      
+    //The above code allows JS to concatenate the output for the data
+    
+    let seventeenNum=(iv * 1.175).toFixed(2)
+    conversionValueSeventeen.textContent= "17.5% VAT on your purchase means a total price of" + " " + "£" + seventeenNum  + "p"
+      
+    let twentyNum=(iv * 1.2).toFixed(2)
+    conversionValueTwenty.textContent= "20% VAT on your purchase means a total price of" + " " + "£" + twentyNum + "p"
+      
+      
+    
+    //Then we output the iv*" " in the converted "conversion-value" <p> tag
+     
+    }
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>
