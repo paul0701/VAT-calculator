@@ -12,11 +12,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="bg-dark">
+  <body class="">
     <container id="container1">
            <h1>Metric/Imperial unit converter</h1>
     <div class="div">
-        <input id="intial-value" class="intial-value" type="number" placeholder="Enter" oninput="converter(this.value)"></input>
+        <input id="intial-value" class="intial-value" type="number" placeholder="Enter" oninput="converterFive(this.value)"></input>
        </div>
    </container>
    <container id="container2">
@@ -36,12 +36,12 @@
     let conversionValueTwenty = document.getElementById("conversion-value-twenty")
     //End of variable assignment code
     
-    function converter(iv) 
+    function converterFive(ivFive) 
     
     //Here we invoke the converter(this.value) function from the input tag
     
     {
-    let fiveNum=(iv * 1.05).toFixed(2)
+    let fiveNum=(ivFive * 1.05).toFixed(2)
     conversionValueFive.textContent= "5% VAT on your purchase means a total price of" + " " + "£" + fiveNum + "p"
       
     //The above code allows JS to concatenate the output for the data
